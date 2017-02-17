@@ -1,24 +1,8 @@
+스타벅스의 커스텀 레시피를 공유하고 랭킹을 메기는 서비스를 위한 깃입니다.
 
-     ,-----.,--.                  ,--. ,---.   ,--.,------.  ,------.
-    '  .--./|  | ,---. ,--.,--. ,-|  || o   \  |  ||  .-.  \ |  .---'
-    |  |    |  || .-. ||  ||  |' .-. |`..'  |  |  ||  |  \  :|  `--, 
-    '  '--'\|  |' '-' ''  ''  '\ `-' | .'  /   |  ||  '--'  /|  `---.
-     `-----'`--' `---'  `----'  `---'  `--'    `--'`-------' `------'
-    ----------------------------------------------------------------- 
+자세한 사항은 준비중입니다.
 
+2017/01/27 - 기획 및 역할 분담, 기획서 작성...
 
-Welcome to your Rails project on Cloud9 IDE!
-
-To get started, just do the following:
-
-1. Run the project with the "Run Project" button in the menu bar on top of the IDE.
-2. Preview your new app by clicking on the URL that appears in the Run panel below (https://recip-adv-masima305.c9users.io/).
-
-Happy coding!
-The Cloud9 IDE team
-
-
-## Support & Documentation
-
-Visit http://docs.c9.io for support, or to learn more about using Cloud9 IDE. 
-To watch some training videos, visit http://www.youtube.com/user/c9ide
+2017/02/17 - write와 list, destroy를 붙여넣었습니다.
+검색, 게시글 읽기 화면, write를 한 후 바로 list 섹션으로 넘어가기 기능이 필요할 것 같습니다(근영)

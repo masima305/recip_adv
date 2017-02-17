@@ -1,0 +1,31 @@
+<% @custom_ingredients.each do |p|%>
+번호 : <%= p.id %><br>
+만든이 : <%= p.maker_name %><br>
+음료명 : <%= p.drink_name %><br>
+들어간 재료 :<%= p.custom_ingredients %><br>
+<hr>
+<% end %>
+
+<a href="/home/custom_maker">[돌아가기]</a>    
+
+<h1>시드 불러오기</h1>
+<% @inglist.each do |c|%>
+<%= c.ingredient_name %><br>
+<%= c.ingredient_number %><br>
+<%= c.ingredient_category %><br>
+<%= c.ingredient_price %><br>
+<hr>
+<% end %>
+
+<h1>셀렉트에 넣기<h1>
+
+<label>베이스 메뉴</label>
+<select name="base_menu">
+    
+    <% @inglist.each do |c|%> <!-- model에 있는 요소를 c에 넣은뒤 반복문 시작. -->
+        <option value="<%=c.ingredient_number %>"><%= c.ingredient_name %><br></option><!-- 값에 옵션벨류
+        를 감싸주는 것으로 셀렉트 안에 요소를 넣는것이 가능-->
+    <% end %>
+    
+</select>
+    

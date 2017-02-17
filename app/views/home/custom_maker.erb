@@ -1,0 +1,117 @@
+<h1>점수를 매기겠습니다.</h1>
+<div>
+    <form action = "/custom_saving" method = "POST">
+            <div>
+                <img src="" alt="음료이미지">
+                
+                <label>음료 제목</label>
+                <input name="drink_title" type="text" placeholder="제목">
+                    
+                <label>작성자</label>
+                <input name="user_name" type="text" placeholder="이름">
+            </div>
+          
+            <label='input_title'>베이스 메뉴</label>
+            <select name="base_menu" class="selectpicker">
+                <option value="A">라임 패션티</option>
+                <option value="B">자몽 허니 블랙 티</option>    
+                <option value="C">유스베리 티</option>
+            </select>
+    
+            <br>
+            
+            <label for='input_title'>아이스/핫</label>
+            <select name = "temperature">
+                <option value="1">ICE</option>
+                <option value="2">HOT</option>
+            </select>
+            
+            <br>
+                
+            <label for='input_size'>사이즈</label>
+            <select name="size" class="size selectpicker">
+                <option value="1">Short</option>
+                <option value="2">Tall</option>    
+                <option value="3">Grande</option>
+                <option value="4">Venti</option>
+            </select>
+            
+            <br>
+                
+            <label for='coffie'>커피</label>
+            <label>커피</label>
+            <select name = 'coffie'>
+                <option value="A1">에스프레소 샷</option>
+                <option value="A2">에스프레소 더불샷</option>
+            </select>
+            
+            <br>
+            
+            <label>시럽</label>
+            <select name="syrup">
+                <option value="B1">바닐라 시럽</option>    
+                <option value="B2">헤이즐넛 시럽</option>
+                <option value="B3">카라멜 시럽</option>
+            </select>
+            
+            <br>
+            
+            <label>우유</label>
+            <select name='milk'>
+                <option value="C1">일반 우유</option>    
+                <option value="C2">저지방 우유</option>
+                <option value="C3">무지방 우유</option>
+            </select>
+            
+            <br>
+            
+            <label>휘핑</label>
+            <select name="whipping">
+                <option value="D1">일반 휘핑</option>    
+                <option value="D2">에스프레소 휘핑</option>
+            </select>
+            
+            <br>
+            
+            <label>자바칩</label>
+            <select name="chip">
+                <option value="E1">자바칩</option>    
+                <option value="E2">자바칩&토핑(반반)</option>
+                <option value="E3">통 자바칩 토핑</option>
+            </select>
+            
+            <br>
+            
+            <label>드리즐</label>
+            <select name="drizzle">
+                <option value="F1">초콜릿</option>    
+                <option value="F2">카라멜</option>
+                <option value="F3">통 자바칩 토핑</option>
+            </select>
+        
+            <br>
+
+            <button type="submit">Submit</button>
+    </form>
+    
+    <%= 
+    
+    @maker_name
+    @drink_name
+    
+    @base
+    @temperature
+    @size
+    @coffie
+    @syrup
+    @milk
+    @whipping
+    @chip
+    @drizzle
+    
+    
+    
+    
+    %>
+    
+</div>

@@ -1,4 +1,17 @@
 Rails.application.routes.draw do
+  root 'home#index'
+  get 'home/index' => "home#index"
+  post 'write' => 'home#write'
+  get 'list' => 'home#list'
+  get 'view/:id' => 'home#view'
+  get 'destroy/:id' => 'home#destroy'
+  get 'update_view/:id' => 'home#update_view'
+  post 'rewrite/:id' => 'home#rewrite'
+  
+  get 'home/custom_maker' => "home#custom_maker"
+  post 'custom_saving' => "home#custom_saving"
+  get 'custom_saving' => "home#custom_saving"
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
