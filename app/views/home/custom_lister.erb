@@ -1,0 +1,18 @@
+<h1>지금까지 만들어진 리스트 목록입니다.</h1>
+<hr>
+<% @custom_list.each do |p| %>
+<p> 만든이 : <%= p.maker_name %> <br> </p>
+<p> 음료명 : <%= p.drink_name %> <br> </p>
+<p> 조  합 : <% @ing_array = p.custom_ingredients.split(".") %><br>
+             <% ing = Ingredient.all %> 
+             <% @ing_array.each do |a| %>
+                 <% ing.each do |b| %>
+                     <% if a == b.ingredient_number %>
+                         <%= b.ingredient_name %>
+                         <%= "," %>
+                     <%end%>
+                 <%end%>
+             <%end%>
+             <hr>
+</p>
+<%end%>

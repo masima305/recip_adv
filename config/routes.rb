@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   get 'home/custom_maker' => "home#custom_maker"
   post 'custom_saving' => "home#custom_saving"
   get 'custom_saving' => "home#custom_saving"
+  get 'custom_lister' => "home#custom_lister"
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

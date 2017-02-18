@@ -19,8 +19,9 @@ class HomeController < ApplicationController
   end
   
   def update_rating
-    
-    
+      
+       @one_recipe = Recipe.find(params[:id])
+       total_ rate = @one_recipe.rate 
       redirect_to "/"
   end 
   
@@ -63,6 +64,11 @@ class HomeController < ApplicationController
     
   end
   
+  def custom_lister
+    @custom_list=Customlist.all
+  end
+
+
   #-----------------------------------------------------------------------------------------------------------------------------
   
   
