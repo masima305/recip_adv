@@ -8,26 +8,42 @@ class HomeController < ApplicationController
         ingredient_number = params[:ingredient_number].to_s
         
         new_recipe = Recipe.new
+        
         new_recipe.name = params[:title]
         new_recipe.rate = params[:star_rating].to_i
+
         new_recipe.ingredient = params[:base_menu] + params[:temperature] + params[:size] + ingredient_number
-        new_recipe.save
-        
-        
-        redirect_to "/"
+
+          if new_recipe.save
+           redirect_to "/"
+           else
+           render text: post.errors.messages[:name].first
+          end
   
   end
   
   def update_rating
       
-       @one_recipe = Recipe.find(params[:id])
-       total_ rate = @one_recipe.rate 
+      @one_recipe = Recipe.find(params[:id])
+      new_rate = Rate.new
+      new_rate.rating = params[:star_rating_update].to_i
+      new_rate.recipe_id = @one_recipe.id
+      new_rate.save
+      
+      sum = 0
+      @one_recipe.rates.each do |r|
+        sum += r.rating
+      end
+      @one_recipe.rate = (@one_recipe.rate + sum)/(@one_recipe.rates.size + 1)
+      
+      @one_recipe.save
       redirect_to "/"
   end 
   
   #------------------------------------------조합 리스트를 만들기 위한 컨트롤러 ----------------------------------------
   
   def custom_maker
+    
   end
   
   def custom_saving
@@ -64,11 +80,13 @@ class HomeController < ApplicationController
     
   end
   
-  def custom_lister
-    @custom_list=Customlist.all
+  def custom_destroy
+    @one_recip = Recip.find(params[:id])
+    @one_recip.destroy
+    redirect_to "/home/custom_lister"
   end
-
-
+  
+  
   #-----------------------------------------------------------------------------------------------------------------------------
   
   

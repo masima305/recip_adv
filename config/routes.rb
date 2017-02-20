@@ -7,11 +7,14 @@ Rails.application.routes.draw do
   get 'destroy/:id' => 'home#destroy'
   get 'update_view/:id' => 'home#update_view'
   post 'rewrite/:id' => 'home#rewrite'
+  post 'update_rating/:id' => 'home#update_rating'
   
   get 'home/custom_maker' => "home#custom_maker"
   post 'custom_saving' => "home#custom_saving"
   get 'custom_saving' => "home#custom_saving"
   get 'custom_lister' => "home#custom_lister"
+  get 'custom_destroy/:id' => "home#custom_destroy"
+  
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

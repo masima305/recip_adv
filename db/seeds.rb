@@ -34,3 +34,31 @@ Ingredient.create(ingredient_name: "무지방",
                    ingredient_number: "C3",
                    ingredient_category: "우유",
                    ingredient_price: 0)                   
+Ingredient.create(ingredient_name: "일반",
+                   ingredient_number: "D1",
+                   ingredient_category: "휘핑",
+                   ingredient_price: 0)
+Ingredient.create(ingredient_name: "에스프레소",
+                   ingredient_number: "D2",
+                   ingredient_category: "휘핑",
+                   ingredient_price: 0)
+Ingredient.create(ingredient_name: "자바칩",
+                   ingredient_number: "E1",
+                   ingredient_category: "자바칩",
+                   ingredient_price: 600)
+Ingredient.create(ingredient_name: "자바칩&토핑(반반)",
+                   ingredient_number: "E2",
+                   ingredient_category: "자바칩",
+                   ingredient_price: 600)
+Ingredient.create(ingredient_name: "통 자바칩 토핑",
+                   ingredient_number: "E3",
+                   ingredient_category: "자바칩",
+                   ingredient_price: 600)
+Ingredient.create(ingredient_name: "초콜릿",
+                   ingredient_number: "F1",
+                   ingredient_category: "드리즐",
+                   ingredient_price: 0)
+Ingredient.create(ingredient_name: "카라멜",
+                   ingredient_number: "F2",
+                   ingredient_category: "드리즐",
+                   ingredient_price: 0)

@@ -1,13 +1,13 @@
 <h1>지금까지 만들어진 리스트 목록입니다.</h1>
 <hr>
-<% @custom_list.each do |p| %>
+<% @custom_list.each do |p| %> <!-- 리스트에 있는 목록을 불러옴.-->
 <p> 만든이 : <%= p.maker_name %> <br> </p>
 <p> 음료명 : <%= p.drink_name %> <br> </p>
-<p> 조  합 : <% @ing_array = p.custom_ingredients.split(".") %><br>
-             <% ing = Ingredient.all %> 
+<p> 조  합 : <% @ing_array = p.custom_ingredients.split(".") %><br> <!-- 1개의 문자열로 이루어진 재료 일련번호들을 "."단위로 끊어서 배열 만듦-->
+             <% ing = Ingredient.all %> <!-- 변수에 재료 목록의 db를 ing에 끌어놓고--> 
              <% @ing_array.each do |a| %>
-                 <% ing.each do |b| %>
-                     <% if a == b.ingredient_number %>
+                 <% ing.each do |b| %> <!--2중 반복문으로 커스텀 음료에 들어간 재료의 일련번호와 재료목록 db의 일련번호를 비교 후-->
+                     <% if a == b.ingredient_number %><!--일련번호가 일치하면 그 일치한 항목의 이름을 불러와 화면에 표시한다.-->
                          <%= b.ingredient_name %>
                          <%= "," %>
                      <%end%>
@@ -15,4 +15,5 @@
              <%end%>
              <hr>
 </p>
+<a href="/custom_destroy/<%=p.id%>">[삭제]</a>
 <%end%>

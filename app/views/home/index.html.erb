@@ -24,7 +24,7 @@
                         <a class="page-scroll" href="#portfolio">Portfolio</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#about">About</a>
+                        <a class="page-scroll" href="#about">스타벅스 레시피 구경</a>
                     </li>
                     <li>
                         <a class="page-scroll" href="#team">Team</a>
@@ -104,7 +104,7 @@
                 <label for="input_title">글 제목</label>
                 <input name="title" type="text" class="form-control" id="title" placeholder="제목">
                 <label for="input_title">작성자</label>
-                <input name="user_name" type="text" class="form-control" id="title" placeholder="이름">
+                <input name="user_name" type="text" class="form-control" placeholder="이름">
               </div>
           
             
@@ -321,7 +321,7 @@
                                     
                                     재료 : <%= p.ingredient %>
                                     <a href="/destroy/<%= p.id %>">[삭제]</a>
-                                    <form action="/update_rating"/<%= p.id %> method = 'POST'>
+                                    <form action="/update_rating/<%= p.id %>" method = 'POST'>
                                           <select name="star_rating_update" id="star_rating_update" data-current-rating="1" display="" >
                                           <option value="1">1</option>
                                           <option value="2">2</option>
