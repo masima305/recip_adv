@@ -1,26 +1,27 @@
 class HomeController < ApplicationController
     def index
-  @recipes = Recipe.all
-  end
+      @recipes = Recipe.all
+      @ing_list = Ingredient.all
+      @ing1 = Ingredient.where("ingredient_number LIKE ?","%#{"A"}#%")
+    end
   
   def write
-    
-        ingredient_number = params[:ingredient_number].to_s
-        
-        new_recipe = Recipe.new
-        
-        new_recipe.name = params[:title]
-        new_recipe.rate = params[:star_rating].to_i
-
-        new_recipe.ingredient = params[:base_menu] + params[:temperature] + params[:size] + ingredient_number
-
-          if new_recipe.save
-           redirect_to "/"
-           else
-           render text: post.errors.messages[:name].first
-          end
   
+      ingredient_number = params[:ingredient_number].to_s
+      new_recipe = Recipe.new
+      
+      new_recipe.name = params[:title]
+      new_recipe.rate = params[:star_rating].to_i
+
+      new_recipe.ingredient = params[:base_menu] + params[:temperature] + params[:size] + ingredient_number
+
+        if new_recipe.save
+         redirect_to "/#list"
+         else
+         render text: post.errors.messages[:name].first
+        end
   end
+    
   
   def update_rating
       
@@ -37,7 +38,7 @@ class HomeController < ApplicationController
       @one_recipe.rate = (@one_recipe.rate + sum)/(@one_recipe.rates.size + 1)
       
       @one_recipe.save
-      redirect_to "/"
+      redirect_to "/#list"
   end 
   
   #------------------------------------------조합 리스트를 만들기 위한 컨트롤러 ----------------------------------------
@@ -52,6 +53,9 @@ class HomeController < ApplicationController
     
     customlist.maker_name = params[:user_name]
     customlist.drink_name = params[:drink_title]
+    customlist.rate = params[:star_rating].to_i
+    customlist.total_rate = params[:star_rating].to_i
+    customlist.count = 1
     
     @all_a = [
     @base = params[:base_menu],
@@ -67,18 +71,22 @@ class HomeController < ApplicationController
     
     customlist.custom_ingredients = @all_a.join(".")
     customlist.save
-    
+  
     #----------------------------------------------
     
     #모델을 변수에 담아준뒤 뷰로 이동.
     @inglist = Ingredient.all
     
-    
-    
     @custom_ingredients = Customlist.all
-    
+  end
+  
+  
+  def custom_lister
+    @custom_list = Customlist.all
     
   end
+  
+
   
   def custom_destroy
     @one_recip = Recip.find(params[:id])

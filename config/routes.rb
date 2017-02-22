@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   post 'rewrite/:id' => 'home#rewrite'
   post 'update_rating/:id' => 'home#update_rating'
   
-  get 'home/custom_maker' => "home#custom_maker"
+  get 'custom_maker' => "home#custom_maker"
   post 'custom_saving' => "home#custom_saving"
   get 'custom_saving' => "home#custom_saving"
   get 'custom_lister' => "home#custom_lister"

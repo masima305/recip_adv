@@ -1,1 +1,38 @@
 오
+
+
+A ~ D
+
+1. 카테고리는 1번씩
+2. 카테고리 안에 항목은 갯수만큼.
+
+1   ㅁ 커피
+2   ㅁ
+3   ㅁ
+4   ㄹ  바나나
+
+selectmenu
+print a.category
+      a.name
+for (i+1 < array.lenth){
+    
+    if (i.category =! (i-1).category)
+         /selectmenu
+         label print 1.category
+         
+         selectmenu value = {print i.category}
+    
+    optioni.name    }
+/selectmenu
+    
+selectmenu
+option
+option
+/selectmenu
+selectmenu
+option
+option
+selectme
+
+i i+1 같으면 
+옵션을 보여주고

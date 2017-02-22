@@ -13,7 +13,9 @@
                      <%end%>
                  <%end%>
              <%end%>
-             <hr>
 </p>
+<p> 만든이 평가 : <%= p. rate %></p>
+<p> 판정단 평가 : <%= aver = (p.total_rate)/(p.count) %> </p>
 <a href="/custom_destroy/<%=p.id%>">[삭제]</a>
+<hr>
 <%end%>

@@ -106,62 +106,19 @@
                 <label for="input_title">작성자</label>
                 <input name="user_name" type="text" class="form-control" placeholder="이름">
               </div>
-          
-            
-    
-              <label for='input_title'>베이스 메뉴</label>
-                <select name="base_menu" class="selectpicker">
-                  <option value="A">라임 패션티</option>
-                  <option value="B">자몽 허니 블랙 티</option>    
-                  <option value="C">유스베리 티</option>
-                </select>
-              
+             
+           <%= @ing1 %>
            
-              
-              <br>
-                <label for='input_title'>아이스/핫</label>
-                  <select name = "temperature" class="temperature selectpicker">
-                  <option value="1">ICE</option>
-                  <option value="2">HOT</option>
-                  </select>
-                <br>
-                <label for='input_size'>사이즈</label>
-                <select name="size" class="size selectpicker">
-                  <option value="1">Short</option>
-                  <option value="2">Tall</option>    
-                  <option value="3">Grande</option>
-                  <option value="4">Venti</option>
-                </select>
-                <select name="ingredient_number[]" class="selectpicker ingredient_number" multiple data-live-search="true" multiple data-actions-box="true" data-size="5">
-                  <optgroup label="커피">
-                  <option value="A1">에스프레소 샷</option>
-                  </optgroup>
-                  <optgroup label="시럽">
-                  <option value="B1">바닐라 시럽</option>    
-                  <option value="B2">헤이즐넛 시럽</option>
-                  <option value="B3">카라멜 시럽</option>
-                  </optgroup>
-                  <optgroup label="우유">
-                  <option value="C1">일반 우유</option>    
-                  <option value="C2">저지방 우유</option>
-                  <option value="C3">무지방 우유</option>
-                  </optgroup>
-                  <optgroup label="휘핑">
-                  <option value="D1">일반 휘핑</option>    
-                  <option value="D2">에스프레소 휘핑</option>
-                  </optgroup>
-                  <optgroup label="자바칩">
-                  <option value="E1">자바칩</option>    
-                  <option value="E2">자바칩&토핑(반반)</option>
-                  <option value="E3">통 자바칩 토핑</option>
-                  </optgroup>
-                  <optgroup label="드리즐">
-                  <option value="F1">초콜릿</option>    
-                  <option value="F2">카라멜</option>
-                  <option value="F3">통 자바칩 토핑</option>
-                  </optgroup>
-                </select>
-
+     
+            
+            <select name="star_rating" id="star_rating" data-current-rating="1" display="" >
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+            </select>
+            
         <div class=stars>
             <select name="star_rating" id="star_rating" data-current-rating="1" display="" >
               <option value="1">1</option>
@@ -294,7 +251,7 @@
     </section>
 
     <!-- About Section -->
-    <section id="about">
+    <section id="list">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
@@ -308,8 +265,8 @@
                         <li>
                             <div class="timeline-image">
                             </div>
-                            <div class="timeline-panel">
                                     <% @recipes.each do |p|%>
+                                    <div class="timeline-panel">
                                     <%= image_tag "about/1.jpg", class:"img-circle img-responsive"%>
                                     <div class="timeline-heading">
                                         <h4>작성일 : <%= p.created_at %> </h4>

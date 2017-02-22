@@ -17,6 +17,9 @@ ActiveRecord::Schema.define(version: 20170218142149) do
     t.string   "maker_name"
     t.string   "drink_name"
     t.string   "custom_ingredients"
+    t.integer  "rate"
+    t.integer  "total_rate"
+    t.integer  "count"
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
   end

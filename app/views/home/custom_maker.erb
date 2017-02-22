@@ -12,7 +12,7 @@
             </div>
           
             <label='input_title'>베이스 메뉴</label>
-            <select name="base_menu" class="selectpicker">
+            <select name="base_menu" >
                 <option value="A">라임 패션티</option>
                 <option value="B">자몽 허니 블랙 티</option>    
                 <option value="C">유스베리 티</option>
@@ -28,8 +28,8 @@
             
             <br>
                 
-            <label for='input_size'>사이즈</label>
-            <select name="size" class="size selectpicker">
+            <label>사이즈</label>
+            <select name="size" >
                 <option value="1">Short</option>
                 <option value="2">Tall</option>    
                 <option value="3">Grande</option>
@@ -90,7 +90,40 @@
             </select>
         
             <br>
+            
+            <label>별점</label>
+            <select name="star_rating">
+                <option value="1">*</option>    
+                <option value="2">**</option>
+                <option value="3">***</option>
+                <option value="4">****</option>
+                <option value="5">*****</option>
+            </select>
+            
+            <!---->
+            
+            <div class=stars>
+            <select name="star_rating" id="star_rating" data-current-rating="1" display="" >
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+            </select>
+            <br>
+            <span class="title current-rating">
+              Current rating: <span class="value"></span>
+            </span>
+            <span class="title your-rating hidden">
+              Your rating: <span class="value" ></span>&nbsp;
+              <a href="#" class="clear-rating"><i class="fa fa-times-circle"></i></a>
+            </span>
+        </div>
+        
 
+    </div>
+            
+            
             <button type="submit">Submit</button>
     </form>
     

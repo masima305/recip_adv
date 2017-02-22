@@ -62,3 +62,22 @@ Ingredient.create(ingredient_name: "카라멜",
                    ingredient_number: "F2",
                    ingredient_category: "드리즐",
                    ingredient_price: 0)
+Customlist.create(maker_name: "매롱이",
+                    drink_name: "폭탄커피",
+                    custom_ingredients: "E3.A1.B3.B2",
+                    rate: 3,
+                    total_rate: 13,
+                    count: 4)
+Customlist.create(maker_name: "핵주먹",
+                    drink_name: "주먹커피",
+                    custom_ingredients: "F2.F1.A1.B3.B2",
+                    rate: 5,
+                    total_rate: 19,
+                    count: 4)
+Customlist.create(maker_name: "강아지",
+                    drink_name: "개똥커피",
+                    custom_ingredients: "A1.A1.F2.D1",
+                    rate: 2,
+                    total_rate: 4,
+                    count: 4)
+   
