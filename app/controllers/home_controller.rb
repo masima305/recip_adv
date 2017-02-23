@@ -1,8 +1,12 @@
 class HomeController < ApplicationController
     def index
       @recipes = Recipe.all
-      @ing_list = Ingredient.all
-      @ing1 = Ingredient.where("ingredient_number LIKE ?","%#{"A"}#%")
+      @ing1 = Ingredient.where("ingredient_category = ?","커피")
+      @ing2 = Ingredient.where("ingredient_category = ?","시럽")
+      @ing3 = Ingredient.where("ingredient_category = ?","우유")  
+      @ing4 = Ingredient.where("ingredient_category = ?","휘핑")
+      @ing5 = Ingredient.where("ingredient_category = ?","자바칩")
+      @ing6 = Ingredient.where("ingredient_category = ?","드리즐")
     end
   
   def write
@@ -44,6 +48,8 @@ class HomeController < ApplicationController
   #------------------------------------------조합 리스트를 만들기 위한 컨트롤러 ----------------------------------------
   
   def custom_maker
+    
+    @inglist = Ingredient.all
     
   end
   
@@ -131,5 +137,4 @@ class HomeController < ApplicationController
     @finding_recipe = Recipe.find{|x| x[:name] == params[:search]}
   
   end
-  
 end

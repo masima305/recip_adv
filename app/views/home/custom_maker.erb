@@ -10,7 +10,36 @@
                 <label>작성자</label>
                 <input name="user_name" type="text" placeholder="이름">
             </div>
-          
+            
+            
+            
+            <!-- **************************************  -->
+            <div>
+            <% lastcategory = "none" %> <!-- 먼저 이전꺼랑 비교할 변수를 만들고, "없음"을 저장-->
+            <% @inglist.each do |e|%>   <!-- 재료 수만큼의 횟수로 반복문 돌림. -->
+                <% if lastcategory == "none"%> <!-- 맨 첫번째 돌때만 "없음" 상태일 것이므로 암것도 출력안함 -->
+                
+                    <% elsif lastcategory == e.ingredient_category %> <!-- 이전 카테고리가 지금꺼랑 똑같으면 중복이므로 거름-->
+                
+                    <% else %> <!-- "없음"도 아니고, 전꺼랑 중복도 아니면 새 카테고리라는 뜻.-->
+                        </select> <!--첫 루프가 아니고, 전이랑 카테고리가 다르면 </select> -->
+                        </div> <!--이전 반복에서 열려있을것인 셀렉트를 닫아주고 div도 나눠준다.-->
+                <% end %> 
+                
+                <% if e.ingredient_category != lastcategory%><!--이전 카테고리랑 지금 카테고리가 다른경우 이건 새 카테고리라는 뜻(중복이 아님)-->
+                    <div><!--디비전을 열어주고-->
+                    <label><%= e.ingredient_category %> : <label><!-- 해당 카테고리 라벨 써준다. -->
+                    <select name="<%= e.ingredient_category %>"><!--셀렉트 열어준다.-->
+                <% end %>
+                
+                <option value="<%= e.ingredient_number%>" > <%=e.ingredient_name%> </option><!--셀렉트가 열려있는 상태에서 벨류값을 한번씩 써준다-->
+                <% lastcategory = e.ingredient_category %> <!--핵심!! 반복문 한번이 끝났으므로, 이전 카테고리란에 방금 끝낸 회차의 카테고리를 넣어준다.-->
+                
+            <% end %>
+            </select> <!--반복문 안에서는 열린 셀렉트를 닫을 수 없으므로, 수동으로 닫아준다.-->
+            </div> <!-- 열었던 큰 div도 닫아준다. -->
+            <!--  *******************************************  -->
+            
             <label='input_title'>베이스 메뉴</label>
             <select name="base_menu" >
                 <option value="A">라임 패션티</option>
