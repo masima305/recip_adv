@@ -28,7 +28,7 @@
                 
                 <% if e.ingredient_category != lastcategory%><!--이전 카테고리랑 지금 카테고리가 다른경우 이건 새 카테고리라는 뜻(중복이 아님)-->
                     <div><!--디비전을 열어주고-->
-                    <label><%= e.ingredient_category %> : <label><!-- 해당 카테고리 라벨 써준다. -->
+                    <label><%= e.ingredient_category %> : </label><!-- 해당 카테고리 라벨 써준다. -->
                     <select name="<%= e.ingredient_category %>"><!--셀렉트 열어준다.-->
                 <% end %>
                 
@@ -39,6 +39,8 @@
             </select> <!--반복문 안에서는 열린 셀렉트를 닫을 수 없으므로, 수동으로 닫아준다.-->
             </div> <!-- 열었던 큰 div도 닫아준다. -->
             <!--  *******************************************  -->
+            
+            
             
             <label='input_title'>베이스 메뉴</label>
             <select name="base_menu" >
